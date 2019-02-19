@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="UserQueries.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SybaseConnectionString1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=tpnjsybdb;UID=rds_loader5;PWD=xxxxxxx;Database=common_db</Value>
+    </Setting>
+    <Setting Name="IsProduction" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SybaseStageConnection" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DSN=sybaseStage</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
