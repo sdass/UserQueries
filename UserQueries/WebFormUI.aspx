@@ -18,6 +18,8 @@
         
         <br /><br /><br />
         <asp:Button ID="BtnSubmit" runat="server" Text="Search" OnClick="BtnSubmit_Click" />
+        <asp:Button ID="BtnViewPdf" runat="server" Text="ViewPdf" OnClick="BtnViewPdf_Click" />
+        <asp:Button ID="Button1" runat="server" Text="ViewMSWord" OnClick="BtnViewMSWord_Click" />
 
         </asp:Panel>
 
@@ -42,6 +44,13 @@
             }
             document.getElementById("divMessage").innerText = "";
             
+        }
+        function changeUrlAddressAndHistory() {
+            if (window.history.pushState) {
+                window.history.pushState("", "Pdf Preview", "~/WebFormPdfView.aspx?PDF=HAW0920_0710P.pdf" );
+            }else{
+                document.location.href = "~/WebFormPdfView.aspx?PDF=HAW0920_0710P.pdf";
+            }
         }
     </script>
 </body>

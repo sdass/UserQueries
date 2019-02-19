@@ -8,9 +8,9 @@ using System.Diagnostics;
 using System.Data.Odbc;
 using System.Text;
 using System.Data;
-using System.Data.SqlClient;
-using System.Data.Linq;
-using System.Data.Linq.Mapping;
+using System.IO;
+using System.Web.Mvc;
+
 
 namespace UserQueries
 {
@@ -24,6 +24,46 @@ namespace UserQueries
          Debug.WriteLine("WebFormUI getting loaded...");
       }
 
+      protected void BtnViewMSWord_Click(object sender, EventArgs e)
+      {
+         Debug.WriteLine("In BtnViewMSWord_Click() clicked . . . ");
+         string filepath = @"C:\Users\sdass\Documents\Visual Studio 2015\Projects\UserQueries\UserQueries\data\Sunday - 12-9-2018 SSTF Notes.docx";
+         FileInfo finfo = new FileInfo(filepath);
+         
+         if (File.Exists(filepath))
+         {
+            Debug.WriteLine("file exists . . . ");
+            FileStream fs = (new FileStream(filepath, FileMode.Open, FileAccess.Read));
+            Response.ContentType = "Application/msword";
+            Response.AppendHeader("Content-Disposition", "inline; filename=" + finfo.Name); //gives proper filename on download
+            Response.AppendHeader("Content-Length", "inline; filename=" + finfo.Length.ToString());
+            Response.Buffer = true;
+
+            const int buffersize = 64 * 1024;
+            byte[] buffer = new byte[buffersize];
+
+            int count = fs.Read(buffer, 0, buffersize);
+            while (count > 0)
+            {
+               Response.OutputStream.Write(buffer, 0, count);
+               Array.Clear(buffer, 0, buffersize);
+               count = fs.Read(buffer, 0, buffersize);
+            }
+
+            Response.End(); //gracefully signaling to browser transfer ended
+         }
+
+      }
+
+
+      protected void BtnViewPdf_Click(object sender, EventArgs e)
+      {
+         Debug.WriteLine("In BtnViewPdf_Click() clicked . . . ");
+           Response.Redirect("~/WebFormPdfView.aspx?PDF=HAW0920_0710P.pdf");     //  redirect 302 involved
+        // Server.Transfer("~/WebFormPdfView.aspx?PDF=HAW0920_0710P.pdf"); //forward equivalent
+
+        // ScriptManager.RegisterStartupScript(this, Page.GetType(), "key", "changeUrlAddressAndHistory()", true); not affecting
+      }
       protected void BtnSubmit_Click(object sender, EventArgs e)
       {
          if (TxtBxSearchInput.Text == null || TxtBxSearchInput.Text == "")
