@@ -1,14 +1,13 @@
 ﻿
 
-var trackArray = []; //global
-
 $(document).ready(
     function () {
         console.log("ready!!");
 
         //put an ajax call to read the track list from a file or database and fill up the text box eventually.
-        
-        getTracksInjoson(fillUpTrackListBox);
+       getTracksInjoson(fillUpTrackListBox); //global var used with passing callback function
+        //var trackArrayLocal = getTracksInjosonSynch();
+       // fillUpTrackListBoxWithLocal(trackArrayLocal);
 
         /*
         var a = {};
@@ -37,9 +36,17 @@ $(document).ready(
 
     });
 
-function fillUpTrackListBox() {
+function fillUpTrackListBoxWithLocal(ltrackArray) {
     var track2Listbox = $('#ListBox1')
-    $.each(trackArray, function (index, track) {
+    $.each(ltrackArray, function (index, track) {
+        console.log(index + " ----- " + track.fullName + " : " + track.abbrev);
+        track2Listbox.append($("<option/>").val(track.abbrev).text(track.fullName));
+    });
+}
+
+function fillUpTrackListBox(ptrackArray) {
+    var track2Listbox = $('#ListBox1')
+    $.each(ptrackArray, function (index, track) {
         console.log(index + " ----- " + track.fullName + " : " + track.abbrev);
         track2Listbox.append($("<option/>").val(track.abbrev).text(track.fullName));
     });
@@ -52,11 +59,24 @@ function getTracksInjoson(callback) {
         data: '',
         success: function (rcvdata, textStatus, jqXHR) {
             console.log("call successsful!");
-            trackArray = rcvdata;
-            callback();
-
+            callback(rcvdata);
         }
 
-
     })
+}
+
+
+    function getTracksInjosonSynch() {
+        $.ajax({
+            dataType: "json",
+            url:   document.URL.substring(0, document.URL.lastIndexOf("/") + 1  ) + "data/alltracks.json",  //'http://localhost:50049/data/alltracks.json',
+            data: '',
+            success: function (rcvdata, textStatus, jqXHR) {
+                console.log("call successsful!");
+                return rcvdata;
+                
+            },
+            async: false
+
+        })
 }
