@@ -1,0 +1,46 @@
+﻿[
+  {
+    "fullName": "Aqueduct",
+    "abbrev": "AQU"
+  },
+  {
+    "fullName": "Gulfstream",
+    "abbrev": "GF"
+  },
+  {
+    "fullName": "Laurel",
+    "abbrev": "LARC"
+  },
+  {
+    "fullName": "Santa Anita",
+    "abbrev": "SAN"
+  },
+
+
+  {
+    "fullName": "PARX",
+    "abbrev": "PAR"
+  },
+  {
+    "fullName": "Mahoning Valley",
+    "abbrev": "MAN"
+  },
+  {
+    "fullName": "Charles Town",
+    "abbrev": "CTN"
+  },
+  {
+    "fullName": "Oklawn",
+    "abbrev": "OKL"
+  },
+
+
+  {
+    "fullName": "Penn National",
+    "abbrev": "PEN"
+  }
+
+
+
+
+]
