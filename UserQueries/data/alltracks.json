@@ -4,8 +4,8 @@
     "abbrev": "AQU"
   },
   {
-    "fullName": "Gulfstream",
-    "abbrev": "GF"
+    "fullName": "Gulfstream West",
+    "abbrev": "GPW"
   },
   {
     "fullName": "Laurel",
@@ -23,7 +23,7 @@
   },
   {
     "fullName": "Mahoning Valley",
-    "abbrev": "MAN"
+    "abbrev": "MVR"
   },
   {
     "fullName": "Charles Town",
@@ -38,9 +38,23 @@
   {
     "fullName": "Penn National",
     "abbrev": "PEN"
+  },
+
+
+  {
+    "fullName": "Churchill Downs",
+    "abbrev": "CD"
+  },
+
+  {
+    "fullName": "Finger Lakes",
+    "abbrev": "FL"
+  },
+
+  {
+    "fullName": "Gulfstream",
+    "abbrev": "GP"
   }
-
-
 
 
 ]

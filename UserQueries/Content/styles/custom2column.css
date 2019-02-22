@@ -1,0 +1,18 @@
+﻿
+        .row {
+            display: flex;
+        }
+
+        .column {
+            float:left;
+        }
+
+        .left {
+            width: 50%;
+           /* background-color: #aaa; */
+        }
+
+        .right {
+            width: 50%;
+            /* background-color: #bbb;*/
+        }

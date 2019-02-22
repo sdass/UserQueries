@@ -10,7 +10,7 @@
 namespace UserQueries {
     
     
-    public partial class WebFormJQuery {
+    public partial class col2WebForm {
         
         /// <summary>
         /// form1 control.
@@ -83,23 +83,5 @@ namespace UserQueries {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnProcess;
-        
-        /// <summary>
-        /// txtBoxAllINputId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBoxAllINputId;
-        
-        /// <summary>
-        /// lblStatusId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatusId;
     }
 }
